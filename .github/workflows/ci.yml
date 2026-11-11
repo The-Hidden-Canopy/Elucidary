@@ -1,0 +1,21 @@
+name: Elucidary Windows checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install source and parser dependencies
+        run: python -m pip install ".[languages,javascript]"
+      - name: Test standalone desktop and service
+        run: python -m unittest discover -s tests -t . -v
+      - name: Check desktop startup
+        run: elucidary --self-check --workspace "${{ runner.temp }}/elucidary-self-check"
+      - name: Build Python wheel
+        run: python -m pip wheel . --no-deps --wheel-dir dist

@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "elucidary"
+version = "0.1.0"
+description = "Standalone, local-first repository exploration and source-grounded learning desktop."
+readme = "README.md"
+requires-python = ">=3.12"
+license = {file = "LICENSE"}
+authors = [{name = "The Hidden Canopy LLC"}]
+dependencies = []
+classifiers = ["License :: OSI Approved :: Apache Software License", "Development Status :: 3 - Alpha", "Programming Language :: Python :: 3"]
+
+[project.urls]
+Repository = "https://github.com/The-Hidden-Canopy/Elucidary"
+Issues = "https://github.com/The-Hidden-Canopy/Elucidary/issues"
+
+[project.optional-dependencies]
+javascript = ["esprima==4.0.1"]
+languages = ["tree-sitter==0.25.2", "tree-sitter-typescript==0.23.2", "tree-sitter-cpp==0.23.4",
+             "tree-sitter-c==0.23.4", "tree-sitter-c-sharp==0.23.1", "tree-sitter-rust==0.23.2"]
+
+[project.scripts]
+elucidary = "verifier_lab.elucidary_desktop:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+verifier_lab = ["riskpacks_data/*.json", "purposes_data/*.json", "third_party/*.txt"]
+
+[tool.setuptools]
+license-files = ["LICENSE", "NOTICE", "OPEN_CANOPY_CONTRACT.md", "THIRD_PARTY_NOTICES.md"]

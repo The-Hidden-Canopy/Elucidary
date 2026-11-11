@@ -1,0 +1,6 @@
+include LICENSE NOTICE OPEN_CANOPY_CONTRACT.md THIRD_PARTY_NOTICES.md
+recursive-include docs *.md
+recursive-include tools *.py *.c
+recursive-include tests *.py
+recursive-include examples *.py
+recursive-include licenses *

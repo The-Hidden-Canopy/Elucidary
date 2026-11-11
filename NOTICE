@@ -1,0 +1,13 @@
+Elucidary
+An Open Canopy project by The Hidden Canopy LLC.
+
+This distribution includes Elucidary and shared service code originating in:
+The Hidden Canopy's Digital Agnostic System Reconciliation Engine (DASRE)
+https://github.com/The-Hidden-Canopy/Digital-Agnostic-System-Reconciliation-Engine
+Source baseline: 2ebd21659535b515de7bda757b4f5d8668934b9f
+
+The project source is distributed under the Apache License, Version 2.0.
+Existing third-party attribution and license notices are preserved separately.
+See THIRD_PARTY_NOTICES.md and src/verifier_lab/third_party/.
+
+This NOTICE is informational and does not modify the Apache License.
